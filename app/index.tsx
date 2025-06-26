@@ -1,11 +1,10 @@
-import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { MediaPlayer } from '@/components/MediaPlayer';
+import PlayerScreen from '../components/PlayerScreen';
 
-export default function PlayerScreen() {
+export default function Home() {
   return (
     <View style={styles.container}>
-      <MediaPlayer />
+      <PlayerScreen />
     </View>
   );
 }
@@ -13,5 +12,6 @@ export default function PlayerScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#101624',
   },
 });
