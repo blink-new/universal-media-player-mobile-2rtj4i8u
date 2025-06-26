@@ -2,13 +2,14 @@ import { useEffect } from 'react';
 import { Tabs } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useFrameworkReady } from '@/hooks/useFrameworkReady';
+import { MediaPlayerProvider } from '@/contexts/MediaPlayerContext';
 import { Music, Library, Settings } from 'lucide-react-native';
 
 export default function RootLayout() {
   useFrameworkReady();
 
   return (
-    <>
+    <MediaPlayerProvider>
       <Tabs
         screenOptions={{
           headerShown: false,
@@ -50,6 +51,6 @@ export default function RootLayout() {
         />
       </Tabs>
       <StatusBar style="light" />
-    </>
+    </MediaPlayerProvider>
   );
 }

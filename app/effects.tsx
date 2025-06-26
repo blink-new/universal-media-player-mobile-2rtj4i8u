@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -15,15 +15,13 @@ import {
   Volume2,
   Sliders,
 } from 'lucide-react-native';
-import { useMediaPlayer } from '@/hooks/useMediaPlayer';
+import { useMediaPlayerContext } from '@/contexts/MediaPlayerContext';
 import { eqBandsDefinition, eqPresets } from '@/lib/media-defaults';
 
 export default function EffectsScreen() {
-  const { currentTrack } = useMediaPlayer();
-  const [eqValues, setEqValues] = useState<number[]>(
-    Array(eqBandsDefinition.length).fill(0)
-  );
-  const [selectedPreset, setSelectedPreset] = useState<string>('flat');
+  const { currentTrack } = useMediaPlayerContext();
+  const [eqValues, setEqValues] = React.useState<number[]>(Array(eqBandsDefinition.length).fill(0));
+  const [selectedPreset, setSelectedPreset] = React.useState<string>('flat');
 
   const handleEqChange = (index: number, value: number) => {
     const newValues = [...eqValues];

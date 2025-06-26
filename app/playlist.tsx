@@ -18,7 +18,7 @@ import {
   Library,
 } from 'lucide-react-native';
 import Animated, { FadeInRight } from 'react-native-reanimated';
-import { useMediaPlayer } from '@/hooks/useMediaPlayer';
+import { useMediaPlayerContext } from '@/contexts/MediaPlayerContext';
 import { PlaylistItem } from '@/lib/types';
 
 export default function PlaylistScreen() {
@@ -28,7 +28,7 @@ export default function PlaylistScreen() {
     playTrack,
     addToPlaylist,
     removeFromPlaylist,
-  } = useMediaPlayer();
+  } = useMediaPlayerContext();
 
   const handleAddMedia = async () => {
     try {

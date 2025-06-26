@@ -23,7 +23,7 @@ import Animated, {
   useAnimatedStyle,
   withSpring,
 } from 'react-native-reanimated';
-import { useMediaPlayer } from '@/hooks/useMediaPlayer';
+import { useMediaPlayerContext } from '@/contexts/MediaPlayerContext';
 import { PlaybackControls } from './PlaybackControls';
 import { VolumeControl } from './VolumeControl';
 
@@ -40,7 +40,7 @@ export function MediaPlayer() {
     playPrevious,
     seekTo,
     setVolumeLevel,
-  } = useMediaPlayer();
+  } = useMediaPlayerContext();
 
   const scale = useSharedValue(1);
 
